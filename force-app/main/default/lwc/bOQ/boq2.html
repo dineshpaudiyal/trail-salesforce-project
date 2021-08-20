@@ -1,0 +1,454 @@
+<template>
+  
+    <div class="slds-grid slds-wrap ">  
+        <div class="slds-col slds-size_12-of-12">
+          <lightning-card><h1>Input</h1></lightning-card>
+          
+        </div>
+  
+        <div class="slds-col slds-size_12-of-12">
+          <lightning-card 
+                        object-api-name={objectApiName}
+                        record-id={recordId}
+                        fields={fields}>
+            <lightning-layout>
+                <lightning-layout-item class="slds-col slds-size_4-of-12 " style="padding-left: 20px;">
+                    <div class="slds-box">
+                      <span style="font-weight: bold;">Finance Ditail</span>
+  
+                        <lightning-combobox
+                            label="Loan Type"
+                            value={LoanType}
+                            onchange={loanTypeChange}
+                            options={loanTypeOptions}
+                        ></lightning-combobox>
+                        
+                        <lightning-combobox
+                            label="Loan Product"
+                            value={LoanProduct}
+                            onchange={LoanProductChange}
+                            options={LoanProductOptions}
+                        ></lightning-combobox>
+  
+                        <lightning-combobox
+                            label="Goods Type"
+                            value={GoodsType}
+                            onchange={GoodsTypeChange}
+                            options={GoodsTypeOptions}
+                        ></lightning-combobox>
+                        
+                        <lightning-combobox
+                            label="Loan Frequency"
+                            value={LoanFrequency}
+                            onchange={LoanFrequencyChange}
+                            options={LoanFrequencyOptions}
+                        ></lightning-combobox>
+  
+                        <lightning-input
+                            name="Car Price"
+                            label="Car Price"
+                        ></lightning-input>
+  
+                        <lightning-input
+                        name="Deposit"
+                        label="Deposit"
+                        ></lightning-input>
+  
+                        <lightning-input
+                            name="Trade In"
+                            label="Trade In"
+                        ></lightning-input>
+                        
+                        <lightning-input
+                        name="Payout On Trade In"
+                        label="Payout On Trade In"
+                        ></lightning-input>
+  
+                        <lightning-input
+                        name="Net Deposit"
+                        label="Net Deposit"
+                        ></lightning-input>
+  
+                        <lightning-input
+                        name="Application Fee"
+                        label="Application Fee"
+                        ></lightning-input>
+  
+                        <lightning-input
+                            name="DOF"
+                            label="DOF"
+                        ></lightning-input>
+  
+                        <lightning-input
+                            name="PPSR"
+                            label="PPSR"
+                        ></lightning-input>
+  
+                        <lightning-radio-group name="radioGroup"
+                        label="Type Value"
+                        options={options}
+                        value={value}
+                        type="radio"></lightning-radio-group>
+  
+  
+                        <lightning-input
+                            name="Residual Value (%)"
+                            label="Residual Value (%)"
+                        ></lightning-input>
+  
+                        <lightning-input
+                            name="Residual Value"
+                            label="Residual Value"
+                        ></lightning-input>
+  
+                        Loan Details
+                        <lightning-input
+                            name="Term (months)"
+                            label="Term (months)"
+                        ></lightning-input>
+  
+                        <lightning-combobox
+                            label="Asset Year"
+                            value={AssetYear}
+                            onchange={AssetYearChange}
+                            options={AssetYearOptions}
+                        ></lightning-combobox>
+  
+                        <lightning-combobox
+                        label="Property Owner"
+                        value={PropertyOwner}
+                        onchange={PropertyOwnerChange}
+                        options={APropertyOwnerOptions}
+                        ></lightning-combobox>
+  
+                        <lightning-combobox
+                        label="PrivateSales"
+                        value={PrivateSales}
+                        onchange={PrivateSalesChange}
+                        options={PrivateSalesOptions}
+                        ></lightning-combobox>
+  
+                        <lightning-combobox
+                        label="Payment"
+                        value={Payment}
+                        onchange={PaymentChange}
+                        options={PaymentOptions}
+                        ></lightning-combobox>
+  
+                        <lightning-input
+                            name="Monthly Fee"
+                            label="Monthly Fee"
+                        ></lightning-input>
+  
+                        <lightning-input
+                            name="Brokerage (%)"
+                            label="Brokerage (%)"
+                        ></lightning-input>
+  
+                        <lightning-input
+                            name="Base Rate"
+                            label="Base Rate"
+                        ></lightning-input>
+  
+                        <lightning-input
+                            name="Client Rate"
+                            label="Client Rate"
+                        ></lightning-input>
+  
+                        <lightning-input
+                            name="NAF"
+                            label="NAF"
+                        ></lightning-input>
+                    <!-- </lightning-card> -->
+                    </div>
+                </lightning-layout-item>
+              
+                <lightning-layout-item class="slds-col slds-size_8-of-12" style="padding-left: 10px;  padding-right: 20px;" >
+                  
+                  <div class=" slds-box" >
+                    <span style="font-weight: bold;">Commission and Repayment</span>                    <div class="slds-grid">
+                      <div class="slds-wrap">
+                          <div class="slds-col slds-box">
+                            <span>1</span>
+                          </div>
+                          <div class="slds-col slds-box">
+                            <span>Estimated Commision</span>
+                          </div>
+                          <div class="slds-col slds-box">
+                            <span>DOF</span>
+                          </div>
+                          <div class="slds-col slds-box">
+                            <span>Insurance Income</span>
+                          </div>
+                          <div class="slds-col slds-box">
+                            <span>Total Commision (GST Exc.)</span>
+                          </div>
+                          <div class="slds-col slds-box">
+                            <span>Total Commision (GST Inc.)</span>
+                          </div>
+                      </div>
+  
+                      <div class="slds-wrap">
+                        <div class="slds-col slds-box">
+                          <span>Quoting</span>
+                        </div>
+                        <div class="slds-col slds-box">
+                          <span>$0.00</span>
+                        </div>
+                        <div class="slds-col slds-box">
+                          <span>$0.00</span>
+                        </div>
+                        <div class="slds-col slds-box">
+                          <span>$0.00</span>
+                        </div>
+                        <div class="slds-col slds-box">
+                          <span>$0.00</span>
+                        </div>
+                        <div class="slds-col slds-box">
+                          <span>$0.00</span>
+                        </div>
+                     </div>
+  
+                       <div class="slds-wrap">
+                        <div class="slds-col slds-box">
+                          <span>Simple</span>
+                        </div>
+                        <div class="slds-col slds-box">
+                          <span>1</span>
+                        </div>
+                        <div class="slds-col slds-box">
+                          <span>1</span>
+                        </div>
+                        <div class="slds-col slds-box">
+                          <span>1</span>
+                        </div>
+                        <div class="slds-col slds-box">
+                          <span>1</span>
+                        </div>
+                        <div class="slds-col slds-box">
+                          <span>1</span>
+                        </div>
+                     </div>
+  
+                     <div class="slds-wrap">
+                      <div class="slds-col slds-box">
+                        <span>Fully</span>
+                      </div>
+                      <div class="slds-col slds-box">
+                        <span>1</span>
+                      </div>
+                      <div class="slds-col slds-box">
+                        <span>1</span>
+                      </div>
+                      <div class="slds-col slds-box">
+                        <span>1</span>
+                      </div>
+                      <div class="slds-col slds-box">
+                        <span>1</span>
+                      </div>
+                      <div class="slds-col slds-box">
+                        <span>1</span>
+                      </div>
+                   </div>
+  
+                   <div class="slds-wrap">
+                    <div class="slds-col slds-box">
+                      <span>Standard</span>
+                    </div>
+                    <div class="slds-col slds-box">
+                      <span>1</span>
+                    </div>
+                    <div class="slds-col slds-box">
+                      <span>1</span>
+                    </div>
+                    <div class="slds-col slds-box">
+                      <span>1</span>
+                    </div>
+                    <div class="slds-col slds-box">
+                      <span>1</span>
+                    </div>
+                    <div class="slds-col slds-box">
+                      <span>1</span>
+                    </div>
+                 </div>
+  
+                  <div class="slds-wrap">
+                        <div class="slds-col slds-box">
+                          <span>Basic</span>
+                        </div>
+                        <div class="slds-col slds-box">
+                          <span>1</span>
+                        </div>
+                        <div class="slds-col slds-box">
+                          <span>1</span>
+                        </div>
+                        <div class="slds-col slds-box">
+                          <span>1</span>
+                        </div>
+                        <div class="slds-col slds-box">
+                          <span>1</span>
+                        </div>
+                        <div class="slds-col slds-box">
+                          <span>1</span>
+                        </div>
+                     </div>
+  
+                     <div class="slds-wrap">
+                      <div class="slds-col slds-box">
+                        <span>1</span>
+                      </div>
+                      <div class="slds-col slds-box">
+                        <span>NAF</span>
+                      </div>
+                      <div class="slds-col slds-box">
+                        <span>Rental</span>
+                      </div>
+                      <div class="slds-col slds-box">
+                        <span>Monthly Payment</span>
+                      </div>
+                      <div class="slds-col slds-box">
+                        <span>Fortnightly Payment</span>
+                      </div>
+                      <div class="slds-col slds-box">
+                        <span>Weekly Payment</span>
+                      </div>
+                      
+                   </div>
+  
+                   <div class="slds-wrap">
+                    <div class="slds-col slds-box">
+                      <span>Quoting</span>
+                    </div>
+                    <div class="slds-col slds-box">
+                      <span>$0.00</span>
+                    </div>
+                    <div class="slds-col slds-box">
+                      <span>$0.00</span>
+                    </div>
+                    <div class="slds-col slds-box">
+                      <span>$0.00</span>
+                    </div>
+                    <div class="slds-col slds-box">
+                      <span>$0.00</span>
+                    </div>
+                    <div class="slds-col slds-box">
+                      <span>$0.00</span>
+                    </div>
+                 </div>
+  
+                 <div class="slds-wrap">
+                  <div class="slds-col slds-box">
+                    <span>Protected Payments</span>
+                  </div>
+                  <div class="slds-col slds-box">
+                    <span>1</span>
+                  </div>
+                  <div class="slds-col slds-box">
+                    <span>1</span>
+                  </div>
+                  <div class="slds-col slds-box">
+                    <span>1</span>
+                  </div>
+                  <div class="slds-col slds-box">
+                    <span>1</span>
+                  </div>
+                  <div class="slds-col slds-box">
+                    <span>1</span>
+                  </div>
+               </div>
+  
+               <div class="slds-wrap">
+                <div class="slds-col slds-box">
+                  <span>Simple</span>
+                </div>
+                <div class="slds-col slds-box">
+                  <span>1</span>
+                </div>
+                <div class="slds-col slds-box">
+                  <span>1</span>
+                </div>
+                <div class="slds-col slds-box">
+                  <span>1</span>
+                </div>
+                <div class="slds-col slds-box">
+                  <span>1</span>
+                </div>
+                <div class="slds-col slds-box">
+                  <span>1</span>
+                </div>
+             </div>
+  
+             <div class="slds-wrap">
+              <div class="slds-col slds-box">
+                <span>Fully</span>
+              </div>
+              <div class="slds-col slds-box">
+                <span>1</span>
+              </div>
+              <div class="slds-col slds-box">
+                <span>1</span>
+              </div>
+              <div class="slds-col slds-box">
+                <span>1</span>
+              </div>
+              <div class="slds-col slds-box">
+                <span>1</span>
+              </div>
+              <div class="slds-col slds-box">
+                <span>1</span>
+              </div>
+           </div>
+  
+           <div class="slds-wrap">
+            <div class="slds-col slds-box">
+              <span>Standard</span>
+            </div>
+            <div class="slds-col slds-box">
+              <span>1</span>
+            </div>
+            <div class="slds-col slds-box">
+              <span>1</span>
+            </div>
+            <div class="slds-col slds-box">
+              <span>1</span>
+            </div>
+            <div class="slds-col slds-box">
+              <span>1</span>
+            </div>
+            <div class="slds-col slds-box">
+              <span>1</span>
+            </div>
+         </div>
+  
+         <div class="slds-wrap">
+          <div class="slds-col slds-box">
+            <span>Basic</span>
+          </div>
+          <div class="slds-col slds-box">
+            <span>1</span>
+          </div>
+          <div class="slds-col slds-box">
+            <span>1</span>
+          </div>
+          <div class="slds-col slds-box">
+            <span>1</span>
+          </div>
+          <div class="slds-col slds-box">
+            <span>1</span>
+          </div>
+          <div class="slds-col slds-box">
+            <span>1</span>
+          </div>
+       </div>
+  
+  
+                    </div>
+                   </div>   
+                </lightning-layout-item>
+                
+          </lightning-layout>
+          </lightning-card>
+        </div>
+    </div>
+    
+  </template>

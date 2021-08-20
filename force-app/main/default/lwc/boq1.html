@@ -1,0 +1,271 @@
+<template>
+  
+    <div class="slds-grid slds-wrap ">  
+        <div class="slds-col slds-size_12-of-12">
+          <lightning-card><h1>Input</h1></lightning-card>
+          
+        </div>
+  
+        <div class="slds-col slds-size_12-of-12">
+          <lightning-card 
+                        object-api-name={objectApiName}
+                        record-id={recordId}
+                        fields={fields}>
+            <lightning-layout>
+                <lightning-layout-item class="slds-col slds-size_4-of-12 " style="padding-left: 20px;">
+                    <div class="slds-box">
+                      <span style="font-weight: bold;">Finance Ditail</span>
+  
+                        <lightning-combobox
+                            label="Loan Type"
+                            value={LoanType}
+                            onchange={loanTypeChange}
+                            options={loanTypeOptions}
+                        ></lightning-combobox>
+                        
+                        <lightning-combobox
+                            label="Loan Product"
+                            value={LoanProduct}
+                            onchange={LoanProductChange}
+                            options={LoanProductOptions}
+                        ></lightning-combobox>
+  
+                        <lightning-combobox
+                            label="Goods Type"
+                            value={GoodsType}
+                            onchange={GoodsTypeChange}
+                            options={GoodsTypeOptions}
+                        ></lightning-combobox>
+                        
+                        <lightning-combobox
+                            label="Loan Frequency"
+                            value={LoanFrequency}
+                            onchange={LoanFrequencyChange}
+                            options={LoanFrequencyOptions}
+                        ></lightning-combobox>
+  
+                        <lightning-input
+                            name="Car Price"
+                            label="Car Price"
+                        ></lightning-input>
+  
+                        <lightning-input
+                        name="Deposit"
+                        label="Deposit"
+                        ></lightning-input>
+  
+                        <lightning-input
+                            name="Trade In"
+                            label="Trade In"
+                        ></lightning-input>
+                        
+                        <lightning-input
+                        name="Payout On Trade In"
+                        label="Payout On Trade In"
+                        ></lightning-input>
+  
+                        <lightning-input
+                        name="Net Deposit"
+                        label="Net Deposit"
+                        ></lightning-input>
+  
+                        <lightning-input
+                        name="Application Fee"
+                        label="Application Fee"
+                        ></lightning-input>
+  
+                        <lightning-input
+                            name="DOF"
+                            label="DOF"
+                        ></lightning-input>
+  
+                        <lightning-input
+                            name="PPSR"
+                            label="PPSR"
+                        ></lightning-input>
+  
+                        <lightning-radio-group name="radioGroup"
+                        label="Type Value"
+                        options={options}
+                        value={value}
+                        type="radio"></lightning-radio-group>
+  
+  
+                        <lightning-input
+                            name="Residual Value (%)"
+                            label="Residual Value (%)"
+                        ></lightning-input>
+  
+                        <lightning-input
+                            name="Residual Value"
+                            label="Residual Value"
+                        ></lightning-input>
+  
+                        Loan Details
+                        <lightning-input
+                            name="Term (months)"
+                            label="Term (months)"
+                        ></lightning-input>
+  
+                        <lightning-combobox
+                            label="Asset Year"
+                            value={AssetYear}
+                            onchange={AssetYearChange}
+                            options={AssetYearOptions}
+                        ></lightning-combobox>
+  
+                        <lightning-combobox
+                        label="Property Owner"
+                        value={PropertyOwner}
+                        onchange={PropertyOwnerChange}
+                        options={APropertyOwnerOptions}
+                        ></lightning-combobox>
+  
+                        <lightning-combobox
+                        label="PrivateSales"
+                        value={PrivateSales}
+                        onchange={PrivateSalesChange}
+                        options={PrivateSalesOptions}
+                        ></lightning-combobox>
+  
+                        <lightning-combobox
+                        label="Payment"
+                        value={Payment}
+                        onchange={PaymentChange}
+                        options={PaymentOptions}
+                        ></lightning-combobox>
+  
+                        <lightning-input
+                            name="Monthly Fee"
+                            label="Monthly Fee"
+                        ></lightning-input>
+  
+                        <lightning-input
+                            name="Brokerage (%)"
+                            label="Brokerage (%)"
+                        ></lightning-input>
+  
+                        <lightning-input
+                            name="Base Rate"
+                            label="Base Rate"
+                        ></lightning-input>
+  
+                        <lightning-input
+                            name="Client Rate"
+                            label="Client Rate"
+                        ></lightning-input>
+  
+                        <lightning-input
+                            name="NAF"
+                            label="NAF"
+                        ></lightning-input>
+                    <!-- </lightning-card> -->
+                    </div>
+                </lightning-layout-item>
+              
+                <lightning-layout-item class="slds-col slds-size_8-of-12" style="padding-left: 10px;  padding-right: 20px;" >
+                  
+                  <div class=" slds-box" >
+                    <span style="font-weight: bold;">Commission and Repayment</span>
+                    <table  style="font-size: smaller" class="slds-table slds-table_bordered slds-border_left slds-border_right">
+                        <tr>
+                            <th></th>
+                            <th><b>Quoting</b></th>
+                            <th><b>Simple</b></th>
+                            <th><b>Fully</b></th>
+                            <th><b>Standard</b></th>
+                            <th><b>Basic</b></th>
+                            <th></th>
+                            <th><b>Quoting</b></th>
+                            <th><b>Protected<br>Payments</b></th>
+                            <th><b>Simple</b></th>
+                            <th><b>Fully</b></th>
+                            <th><b>Standard</b></th>
+                            <th><b>Basic</b></th>
+                          </tr>
+                          <tr>
+                            <td>Estimated<br>Commission</td>
+                            <td style="background-color: gray;">$0.00</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>NAF</td>
+                            <td style="background-color: gray;">$0.00</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>DOF	</td>
+                            <td style="background-color: gray;">$0.00</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>Rentel</td>
+                            <td style="background-color: gray;">$0.00</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>Insurance<br> Income</td>
+                            <td style="background-color: gray;">$0.00</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>Monthly<br>Payment</td>
+                            <td style="background-color: gray;">$0.00</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>TOTAL <br> Commission(GST Exc)</td>
+                            <td style="background-color: gray;">$0.00</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td >Fortnightly<br>Payment</td>
+                            <td style="background-color: gray;">$0.00</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>TOTAL <br>Commission(GST Inc)</td>
+                            <td style="background-color: gray;">$0.00</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>Weekly<br>Payment</td>
+                            <td style="background-color: gray;">$0.00</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                          </tr>
+                    </table>
+                   
+                   </div>
+                </lightning-layout-item>
+                
+          </lightning-layout>
+          </lightning-card>
+        </div>
+    </div>
+    
+  </template>
