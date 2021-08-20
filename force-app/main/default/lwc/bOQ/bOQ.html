@@ -1,18 +1,19 @@
 <template>
-  
-  <div>  
-      <div >
+  123
+  <div class="slds-grid slds-wrap ">  
+      <div class="slds-col slds-size_12-of-12">
         <lightning-card><h1>Input</h1></lightning-card>
+        
       </div>
 
-      <div style="background-color: silver;">
+      <div class="slds-col slds-size_12-of-12">
         <lightning-card 
-          object-api-name={objectApiName}
-          record-id={recordId}
-          fields={fields}>
-
-          <div class="slds-grid ">     
-              <div class=" slds-col slds-size_1-of-3 slds-box" >
+                      object-api-name={objectApiName}
+                      record-id={recordId}
+                      fields={fields}>
+          <lightning-layout>
+              <lightning-layout-item class="slds-col slds-size_4-of-12 " style="padding-left: 20px;">
+                  <div class="slds-box">
                     <span style="font-weight: bold;">Finance Ditail</span>
 
                       <lightning-combobox
@@ -158,290 +159,111 @@
                           name="NAF"
                           label="NAF"
                       ></lightning-input>
-              </div>
+                  <!-- </lightning-card> -->
+                  </div>
+              </lightning-layout-item>
             
-              <div class=" slds-col slds-size_2-of-3 slds-box " >
-                <span style="font-weight: bold;">Commission and Repayment</span>                    
-                  <div class="slds-grid " style="font-size: x-small;">
-                    <div  class="slds-wrap">
-                        <div class="slds-box">
-                          <span>1</span>
-                        </div>
-                        <div class="slds-box">
-                          <span>Estimated Commision</span>
-                        </div>
-                        <div class="slds-box">
-                          <span>DOF</span>
-                        </div>
-                        <div class="slds-box">
-                          <span>Insurance Income</span>
-                        </div>
-                        <div class="slds-box">
-                          <span>Total Commision (GST Exc.)</span>
-                        </div>
-                        <div class="slds-box">
-                          <span>Total Commision (GST Inc.)</span>
-                        </div>
-                    </div>
-
-                    <div class="slds-wrap">
-                      <div class="slds-col slds-box">
-                        <span>Quoting</span>
-                      </div>
-                      <div class="slds-col slds-box">
-                        <span>$0.00</span>
-                      </div>
-                      <div class="slds-col slds-box">
-                        <span>$0.00</span>
-                      </div>
-                      <div class="slds-col slds-box">
-                        <span>$0.00</span>
-                      </div>
-                      <div class="slds-col slds-box">
-                        <span>$0.00</span>
-                      </div>
-                      <div class="slds-col slds-box">
-                        <span>$0.00</span>
-                      </div>
-                   </div>
-
-                     <div class="slds-wrap">
-                      <div class="slds-col slds-box">
-                        <span>Simple</span>
-                      </div>
-                      <div class="slds-col slds-box">
-                        <span>1</span>
-                      </div>
-                      <div class="slds-col slds-box">
-                        <span>1</span>
-                      </div>
-                      <div class="slds-col slds-box">
-                        <span>1</span>
-                      </div>
-                      <div class="slds-col slds-box">
-                        <span>1</span>
-                      </div>
-                      <div class="slds-col slds-box">
-                        <span>1</span>
-                      </div>
-                   </div>
-
-                   <div class="slds-wrap">
-                    <div class="slds-col slds-box">
-                      <span>Fully</span>
-                    </div>
-                    <div class="slds-col slds-box">
-                      <span>1</span>
-                    </div>
-                    <div class="slds-col slds-box">
-                      <span>1</span>
-                    </div>
-                    <div class="slds-col slds-box">
-                      <span>1</span>
-                    </div>
-                    <div class="slds-col slds-box">
-                      <span>1</span>
-                    </div>
-                    <div class="slds-col slds-box">
-                      <span>1</span>
-                    </div>
+              <lightning-layout-item class="slds-col slds-size_8-of-12" style="padding-left: 10px;  padding-right: 20px;" >
+                
+                <div class=" slds-box" >
+                  <span style="font-weight: bold;">Commission and Repayment</span>
+                  <table  style="font-size: smaller" class="slds-table slds-table_bordered slds-border_left slds-border_right">
+                      <tr>
+                          <th></th>
+                          <th><b>Quoting</b></th>
+                          <th><b>Simple</b></th>
+                          <th><b>Fully</b></th>
+                          <th><b>Standard</b></th>
+                          <th><b>Basic</b></th>
+                          <th></th>
+                          <th><b>Quoting</b></th>
+                          <th><b>Protected<br>Payments</b></th>
+                          <th><b>Simple</b></th>
+                          <th><b>Fully</b></th>
+                          <th><b>Standard</b></th>
+                          <th><b>Basic</b></th>
+                        </tr>
+                        <tr>
+                          <td>Estimated<br>Commission</td>
+                          <td style="background-color: gray;">$0.00</td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td>NAF</td>
+                          <td style="background-color: gray;">$0.00</td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td>DOF	</td>
+                          <td style="background-color: gray;">$0.00</td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td>Rentel</td>
+                          <td style="background-color: gray;">$0.00</td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td>Insurance<br> Income</td>
+                          <td style="background-color: gray;">$0.00</td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td>Monthly<br>Payment</td>
+                          <td style="background-color: gray;">$0.00</td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td>TOTAL <br> Commission(GST Exc)</td>
+                          <td style="background-color: gray;">$0.00</td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td >Fortnightly<br>Payment</td>
+                          <td style="background-color: gray;">$0.00</td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td>TOTAL <br>Commission(GST Inc)</td>
+                          <td style="background-color: gray;">$0.00</td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td>Weekly<br>Payment</td>
+                          <td style="background-color: gray;">$0.00</td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                  </table>
+                 
                  </div>
-
-                 <div class="slds-wrap">
-                  <div class="slds-col slds-box">
-                    <span>Standard</span>
-                  </div>
-                  <div class="slds-col slds-box">
-                    <span>1</span>
-                  </div>
-                  <div class="slds-col slds-box">
-                    <span>1</span>
-                  </div>
-                  <div class="slds-col slds-box">
-                    <span>1</span>
-                  </div>
-                  <div class="slds-col slds-box">
-                    <span>1</span>
-                  </div>
-                  <div class="slds-col slds-box">
-                    <span>1</span>
-                  </div>
-               </div>
-
-                <div class="slds-wrap">
-                      <div class="slds-col slds-box">
-                        <span>Basic</span>
-                      </div>
-                      <div class="slds-col slds-box">
-                        <span>1</span>
-                      </div>
-                      <div class="slds-col slds-box">
-                        <span>1</span>
-                      </div>
-                      <div class="slds-col slds-box">
-                        <span>1</span>
-                      </div>
-                      <div class="slds-col slds-box">
-                        <span>1</span>
-                      </div>
-                      <div class="slds-col slds-box">
-                        <span>1</span>
-                      </div>
-                   </div>
-
-                   <div class="slds-wrap">
-                    <div class="slds-col slds-box">
-                      <span>1</span>
-                    </div>
-                    <div class="slds-col slds-box">
-                      <span>NAF</span>
-                    </div>
-                    <div class="slds-col slds-box">
-                      <span>Rental</span>
-                    </div>
-                    <div class="slds-col slds-box">
-                      <span>Monthly Payment</span>
-                    </div>
-                    <div class="slds-col slds-box">
-                      <span>Fortnightly Payment</span>
-                    </div>
-                    <div class="slds-col slds-box">
-                      <span>Weekly Payment</span>
-                    </div>
-                    
-                 </div>
-
-                 <div class="slds-wrap">
-                  <div class="slds-col slds-box">
-                    <span>Quoting</span>
-                  </div>
-                  <div class="slds-col slds-box">
-                    <span>$0.00</span>
-                  </div>
-                  <div class="slds-col slds-box">
-                    <span>$0.00</span>
-                  </div>
-                  <div class="slds-col slds-box">
-                    <span>$0.00</span>
-                  </div>
-                  <div class="slds-col slds-box">
-                    <span>$0.00</span>
-                  </div>
-                  <div class="slds-col slds-box">
-                    <span>$0.00</span>
-                  </div>
-               </div>
-
-               <div class="slds-wrap">
-                <div class="slds-col slds-box">
-                  <span>Protected Payments</span>
-                </div>
-                <div class="slds-col slds-box">
-                  <span>1</span>
-                </div>
-                <div class="slds-col slds-box">
-                  <span>1</span>
-                </div>
-                <div class="slds-col slds-box">
-                  <span>1</span>
-                </div>
-                <div class="slds-col slds-box">
-                  <span>1</span>
-                </div>
-                <div class="slds-col slds-box">
-                  <span>1</span>
-                </div>
-             </div>
-
-             <div class="slds-wrap">
-              <div class="slds-col slds-box">
-                <span>Simple</span>
-              </div>
-              <div class="slds-col slds-box">
-                <span>1</span>
-              </div>
-              <div class="slds-col slds-box">
-                <span>1</span>
-              </div>
-              <div class="slds-col slds-box">
-                <span>1</span>
-              </div>
-              <div class="slds-col slds-box">
-                <span>1</span>
-              </div>
-              <div class="slds-col slds-box">
-                <span>1</span>
-              </div>
-           </div>
-
-           <div class="slds-wrap">
-            <div class="slds-col slds-box">
-              <span>Fully</span>
-            </div>
-            <div class="slds-col slds-box">
-              <span>1</span>
-            </div>
-            <div class="slds-col slds-box">
-              <span>1</span>
-            </div>
-            <div class="slds-col slds-box">
-              <span>1</span>
-            </div>
-            <div class="slds-col slds-box">
-              <span>1</span>
-            </div>
-            <div class="slds-col slds-box">
-              <span>1</span>
-            </div>
-         </div>
-
-         <div class="slds-wrap">
-          <div class="slds-col slds-box">
-            <span>Standard</span>
-          </div>
-          <div class="slds-col slds-box">
-            <span>1</span>
-          </div>
-          <div class="slds-col slds-box">
-            <span>1</span>
-          </div>
-          <div class="slds-col slds-box">
-            <span>1</span>
-          </div>
-          <div class="slds-col slds-box">
-            <span>1</span>
-          </div>
-          <div class="slds-col slds-box">
-            <span>1</span>
-          </div>
-       </div>
-
-       <div class="slds-wrap">
-        <div class="slds-col slds-box">
-          <span>Basic</span>
-        </div>
-        <div class="slds-col slds-box">
-          <span>1</span>
-        </div>
-        <div class="slds-col slds-box">
-          <span>1</span>
-        </div>
-        <div class="slds-col slds-box">
-          <span>1</span>
-        </div>
-        <div class="slds-col slds-box">
-          <span>1</span>
-        </div>
-        <div class="slds-col slds-box">
-          <span>1</span>
-        </div>
-     </div>
-
-
-                  </div>
-                 </div>  
-                 </div> 
-            
+              </lightning-layout-item>
+              
+        </lightning-layout>
         </lightning-card>
       </div>
   </div>
